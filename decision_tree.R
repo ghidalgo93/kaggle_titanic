@@ -21,9 +21,10 @@ fit <- rpart(Survived ~ Pclass + Age + Sex + SibSp + Parch + Fare + Embarked,
              method = "class")
 
 #showing data
-fancyRpartPlot(fit)
+#fancyRpartPlot(fit)
 
 #writing data out to a csv file
 Prediction <- predict(fit, test, type = "class")
 submit <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
-write.csv(submit, file = "myfirstdtree.csv", row.names = FALSE)
+write.csv(submit, file = "firstdecisiontreesub.csv", row.names = FALSE)
+
